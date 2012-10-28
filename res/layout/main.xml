@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+       android:layout_width="fill_parent"  
+       android:layout_height="fill_parent"
+       >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearlayout"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    >
+        <Button
+            android:id="@+id/left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Izquierda"                        
+            android:layout_weight="1"
+            />
+        <Button
+            android:id="@+id/shut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiro"                        
+            android:layout_weight="1"
+            />
+            <Button
+            android:id="@+id/right"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Derecha"                        
+            android:layout_weight="1"
+            
+            />
+</LinearLayout>
+
+
+<puzzle.game.BubbleSurfaceView 
+android:id="@+id/mysurface" 
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent"
+android:layout_above="@id/linearlayout"
+/>
+
+       
+
+</RelativeLayout>
