@@ -71,7 +71,7 @@ public class CalculateScreenBall {
     
     public int[] calculateDistance(int x, int y){       
         double distancia = heightCanvas;
-        int indice = -1;
+        int indice =0;
         int x1,y2;
             for (int i =0; i<pointsInScreen.size();i++){
                 Vector aux2 = (Vector) pointsInScreen.get(i);
@@ -89,6 +89,7 @@ public class CalculateScreenBall {
     }
     
     public int ballsCollide(int x, int y, int indiceMenorDistancia,int distancia){
+         //si hay colision devuelve el indice del punto de colision, sino retorna -1
         //si llega al techo la ubico
         if(distancia < widthBall && pointsInUse.get(indiceMenorDistancia)=="0"&& y <=5)
             //si choca con una bola la reubico. calculo la menor distancia cercana que no tiene bola
@@ -99,8 +100,6 @@ public class CalculateScreenBall {
                 return calculateDistanceNotUsed(x, y);
             else
                 return -1;
-
-        //si hay colision devuelve el indice del punto de colision, sino retorna -1
     }
 
     public boolean isInUse(int i) {

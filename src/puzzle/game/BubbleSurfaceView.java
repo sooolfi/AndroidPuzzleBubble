@@ -121,24 +121,21 @@ public class BubbleSurfaceView extends SurfaceView implements Callback {
         //dibuja la pantalla
         private void doDraw(Canvas canvas) {        	            
             //limpio la pantalla
-                canvas.drawColor(Color.BLACK);
+            canvas.drawColor(Color.BLACK);
             if(!shutBall){ 
-            //si no hay un tiro dibujo la flecha                
-            
+            //si no hay un tiro dibujo la flecha                            
             //rutina para recuperar el angulo original de la flecha
             if(signoAngulo == 1)
                 angle = Math.abs(angle);
             else
                 if(signoAngulo == -1)
-                    angle = -1* Math.abs(angle);
-            
+                    angle = -1* Math.abs(angle);            
             moveMatrix.reset();
             moveMatrix.postRotate(angle,29,81);
             moveMatrix.postTranslate(130,270);
             canvas.drawBitmap(arrowImage, moveMatrix, myPaint);                       
             } else
-                canvas.drawBitmap(ballImage, posX,posY, myPaint);                       
-            
+                canvas.drawBitmap(ballImage, posX,posY, myPaint);                                   
             //dibujar la pantalla 
             Vector y = new Vector();
             for(int i=0;i<points.getSize();i++){
@@ -228,6 +225,7 @@ public class BubbleSurfaceView extends SurfaceView implements Callback {
         }
         //es true cuando se dispara la bola
         void shutBall() {
+            //chequear que el tiro se puede hacer y si hay lugares 
             shutBall = true;
             if(angle >= 0)
                 signoAngulo = 1;
